@@ -12,14 +12,14 @@ body {
     background-color: #dff1e7;
     display: grid;
     place-items: center;
-    min-height: 100vh;
+    min-height: 90vh;
 
     main {
         background-color: white;
         width: 90vw;
         border-radius: 15px;
         padding: 25px;
-        height: 90vh;
+        margin: 30px 0;
 
         form {
             display: flex;
