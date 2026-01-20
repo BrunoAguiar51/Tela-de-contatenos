@@ -30,6 +30,20 @@ body {
                 color: $grey900;
             }
 
+            div.name {
+                display: flex;
+                gap: 10px;
+
+                div.first-name,
+                div.last-name {
+                    flex: 1;
+
+                    input {
+                        width: 100%;
+                    }
+                }
+            }
+
             .first-name,
             .last-name,
             .email-address,
@@ -161,6 +175,7 @@ body {
         div.first-name,
         div.last-name {
             flex: 1;
+
             input {
                 width: 100%;
             }
@@ -170,7 +185,9 @@ body {
     fieldset.query-type {
         display: flex;
         flex-direction: row;
-        div.general, div.support {
+
+        div.general,
+        div.support {
             flex: 1;
         }
     }
