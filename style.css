@@ -28,15 +28,8 @@ body main form h1 {
 }
 body main form div.name {
   display: flex;
-  gap: 10px;
-}
-body main form div.name div.first-name,
-body main form div.name div.last-name {
-  flex: 1;
-}
-body main form div.name div.first-name input,
-body main form div.name div.last-name input {
-  width: 100%;
+  flex-direction: column;
+  gap: 20px;
 }
 body main form .first-name,
 body main form .last-name,

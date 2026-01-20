@@ -32,163 +32,155 @@ body {
 
             div.name {
                 display: flex;
-                gap: 10px;
+                flex-direction: column;
+                gap: 20px;
+            }
 
-                div.first-name,
-                div.last-name {
-                    flex: 1;
+                .first-name,
+                .last-name,
+                .email-address,
+                .message {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 6px;
+                    font-weight: normal;
+
+                    label {
+                        color: $grey500;
+                    }
 
                     input {
-                        width: 100%;
+                        height: 50px;
+                        border-radius: 10px;
+                        border: 1px solid $grey500;
+                        text-indent: 10px;
+                        font-size: 1em;
+                        outline: none;
                     }
                 }
-            }
 
-            .first-name,
-            .last-name,
-            .email-address,
-            .message {
-                display: flex;
-                flex-direction: column;
-                gap: 6px;
-                font-weight: normal;
-
-                label {
-                    color: $grey500;
-                }
-
-                input {
-                    height: 50px;
-                    border-radius: 10px;
-                    border: 1px solid $grey500;
-                    text-indent: 10px;
-                    font-size: 1em;
-                    outline: none;
-                }
-            }
-
-            fieldset {
-                border: none;
-                display: flex;
-                flex-direction: column;
-                gap: 10px;
-
-                legend {
-                    color: $grey500;
-                    margin-bottom: 10px;
-                    font-weight: normal;
-                }
-
-                div.general,
-                div.support {
-                    border: 1px solid $grey500;
-                    height: 50px;
+                fieldset {
+                    border: none;
                     display: flex;
-                    align-items: center;
-                    border-radius: 10px;
+                    flex-direction: column;
+                    gap: 10px;
 
-                    input {
-                        margin-left: 10px;
-                        appearance: none;
-                        content: "";
-                        border: 2px solid $grey500;
-                        width: 20px;
-                        height: 20px;
-                        border-radius: 50%;
-                        position: relative;
-                        cursor: pointer;
+                    legend {
+                        color: $grey500;
+                        margin-bottom: 10px;
+                        font-weight: normal;
+                    }
 
-                        &:checked {
-                            border-color: $green600;
-                        }
+                    div.general,
+                    div.support {
+                        border: 1px solid $grey500;
+                        height: 50px;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 10px;
 
-                        &:checked::after {
+                        input {
+                            margin-left: 10px;
+                            appearance: none;
                             content: "";
-                            width: 10px;
-                            height: 10px;
-                            background-color: $green600;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
+                            border: 2px solid $grey500;
+                            width: 20px;
+                            height: 20px;
                             border-radius: 50%;
+                            position: relative;
+                            cursor: pointer;
+
+                            &:checked {
+                                border-color: $green600;
+                            }
+
+                            &:checked::after {
+                                content: "";
+                                width: 10px;
+                                height: 10px;
+                                background-color: $green600;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                border-radius: 50%;
+                            }
+
+
                         }
 
+                        label {
+                            text-indent: 10px;
+                            color: $grey500;
+                            font-weight: bold;
+                            cursor: pointer;
+                        }
+                    }
 
+                    div.general:has(input:checked),
+                    div.support:has(input:checked) {
+                        border-color: $green600;
+                        background-color: $green200;
+                        transition: 0.5s;
+                    }
+                }
+
+                div.message {
+                    textarea {
+                        border-radius: 10px;
+                        border-color: $grey500;
+                        outline: none;
+                        text-indent: 10px;
+                        padding: 10px;
+                    }
+                }
+
+                div.consent {
+                    input {
+                        border-radius: 0;
                     }
 
                     label {
-                        text-indent: 10px;
                         color: $grey500;
-                        font-weight: bold;
-                        cursor: pointer;
                     }
                 }
 
-                div.general:has(input:checked),
-                div.support:has(input:checked) {
-                    border-color: $green600;
-                    background-color: $green200;
-                    transition: 0.5s;
-                }
-            }
-
-            div.message {
-                textarea {
+                button[type="submit"] {
+                    height: 60px;
                     border-radius: 10px;
-                    border-color: $grey500;
-                    outline: none;
-                    text-indent: 10px;
-                    padding: 10px;
+                    border: none;
+                    background-color: $green600;
+                    color: $green200;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    cursor: pointer;
                 }
             }
+        }
+    }
 
-            div.consent {
+    @media screen and (min-width: 768px) {
+        div.name {
+            display: flex;
+            gap: 10px;
+
+            div.first-name,
+            div.last-name {
+                flex: 1;
+
                 input {
-                    border-radius: 0;
-                }
-
-                label {
-                    color: $grey500;
+                    width: 100%;
                 }
             }
+        }
 
-            button[type="submit"] {
-                height: 60px;
-                border-radius: 10px;
-                border: none;
-                background-color: $green600;
-                color: $green200;
-                font-size: 1.2em;
-                font-weight: bold;
-                cursor: pointer;
+        fieldset.query-type {
+            display: flex;
+            flex-direction: row;
+
+            div.general,
+            div.support {
+                flex: 1;
             }
         }
     }
-}
-
-@media screen and (min-width: 768px) {
-    div.name {
-        display: flex;
-        gap: 10px;
-
-        div.first-name,
-        div.last-name {
-            flex: 1;
-
-            input {
-                width: 100%;
-            }
-        }
-    }
-
-    fieldset.query-type {
-        display: flex;
-        flex-direction: row;
-
-        div.general,
-        div.support {
-            flex: 1;
-        }
-    }
-}
