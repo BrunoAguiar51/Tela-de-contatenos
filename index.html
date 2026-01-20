@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <form action="contact.php" autocomplete="on" method="post">
+            <h1>Contate-nos</h1>
+            <div class="name">
+                <div class="first-name">
+                    <label for="inome">Nome</label>
+                    <input type="text" name="nome" id="inome" required autocomplete="given-name">
+                </div>
+                <div class="last-name">
+                    <label for="isobrenome">Sobrenome</label>
+                    <input type="text" name="sobrenome" id="isobrenome" required autocomplete="family-name">
+                </div>
+            </div>
+
+            <div class="email-address">
+                <label for="iemail">Email</label>
+                <input type="email" name="email" id="iemail" required autocomplete="email" placeholder="exemplo@gmail.com">
+            </div>
+
+            <fieldset class="query-type">
+                <legend>Tipo de Consulta</legend>
+
+                <div class="general">
+                    <input type="radio" name="type" id="igeneral" value="general" checked>
+                    <label for="igeneral">Inquérito Geral</label>
+                </div>
+
+                <div class="support">
+                    <input type="radio" name="type" id="isupport" value="support">
+                    <label for="isupport">Solicitar Suporte</label>
+                </div>
+            </fieldset>
+
+
+            <div class="message">
+                <label for="imessage">Mensagem</label>
+                <textarea name="message" id="imessage" cols="30" rows="10" required></textarea>
+            </div>
+
+            <div class="consent">
+                <input type="checkbox" name="consent" id="iconsent" required>
+                <label for="iconsent">Eu concordo em ser contatado pela equipe.</label>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </main>
+</body>
+
+</html>
