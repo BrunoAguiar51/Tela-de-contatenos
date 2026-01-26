@@ -142,8 +142,9 @@ body main form button[type=submit] {
 }
 
 @media screen and (min-width: 768px) {
-  div.name {
+  body main form div.name {
     display: flex;
+    flex-direction: row;
     gap: 10px;
   }
   div.name div.first-name,
